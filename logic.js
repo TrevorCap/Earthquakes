@@ -155,7 +155,7 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geoj
 
   // Here we create a legend control object.
   var legend = L.control({
-    position: "bottomright"
+    position: "bottomleft"
   });
 
   // Then we add all the details for our legend
@@ -166,13 +166,13 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geoj
 
     var grades = [0, 1, 2, 3, 4, 5, 6];
     var colors = [
-      "red",
-      "orangered",
-      "darkorange",
-      "orange",
-      "gold",
-      "yellow",
-      "greenyellow"
+      "#FF0000",
+      "#FF2400",
+      "#E47833",
+      "#FF7F00",
+      "#CD7F32",
+      "#FFFF00",
+      "#93DB70"
     ];
 
     // Loop through our intervals and generate a label with a colored square for each interval.
