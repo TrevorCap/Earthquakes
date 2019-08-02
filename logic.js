@@ -1,6 +1,6 @@
 // Store our API endpoint inside queryUrl
 var queryUrl = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson";
-var secondURL = "https://raw.githubusercontent.com/fraxen/tectonicplates/master/GeoJSON/PB2002_boundaries.json"
+var secondURL = "https://raw.githubusercontent.com/fraxen/tectonicplates/master/GeoJSON/PB2002_boundaries.json";
 
 // Perform a GET request to the query URL
 d3.json(queryUrl, function(data) {
@@ -40,20 +40,20 @@ var earthquakes = L.geoJSON(earthquakeData, {
   createMap(earthquakes);
 }
 
-function createLines(plateData) {
+// function createLines(plateData) {
 
-  // Create a GeoJSON layer containing the features array on the earthquakeData object
-  // Run the onEachFeature function once for each piece of data in the array
-var plates = L.geoJSON(plateData, {
-  pointToLayer: function(feature, latlng) {
-      return new L.polyline(latlng, {
-          color: '#000000'
-      });
-  },
-});
-  // Sending our plates layer to the createMap function
-  createMap(plates);
-}
+//   // Create a GeoJSON layer containing the features array on the earthquakeData object
+//   // Run the onEachFeature function once for each piece of data in the array
+// var plates = L.geoJSON(plateData, {
+//   pointToLayer: function(feature, latlng) {
+//       return new L.polyline(latlng, {
+//           color: '#000000'
+//       });
+//   },
+// });
+//   // Sending our plates layer to the createMap function
+//   createMap(plates);
+// }
 
 
 function createMap(earthquakes) {
@@ -93,8 +93,9 @@ function createMap(earthquakes) {
 
   // Create overlay object to hold our overlay layer
   var overlayMaps = {
-    "Earthquakes": earthquakes,
-    "Plates": plates
+    // "Plates": plates,
+    "Earthquakes": earthquakes
+    
   };
 
   // Create our map, giving it the streetmap and earthquakes layers to display on load
